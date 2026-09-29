@@ -1,0 +1,172 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Main Container */
+.counter-container {
+    background: #1e293b;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid #334155;
+    transition: all 0.5s ease;
+}
+
+/* Status Top Indicator */
+.status-indicator {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #94a3b8;
+    transition: color 0.4s ease;
+}
+
+/* Display Area with Waves */
+.display-area {
+    position: relative;
+    height: 240px;
+    background: #0f172a;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1e293b;
+    margin-bottom: 2rem;
+}
+
+/* SVG Wave Line & Animation */
+.wave-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%; /* Extended for smooth infinite scrolling */
+    height: 100%;
+    fill: rgba(148, 163, 184, 0.15); /* Default Neutral */
+    transition: fill 0.5s ease;
+    animation: wave-move 6s linear infinite;
+}
+
+@keyframes wave-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Central Circle */
+.counter-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: #1e293b;
+    border: 4px solid #64748b; /* Default Neutral */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#counter-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* Statistics Dashboard */
+.stats-dashboard {
+    display: flex;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 1rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid #334155;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.stat-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+/* Control Buttons Area */
+.controls-area {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+    flex: 1;
+}
+
+.btn-decrement { background: #ef4444; }
+.btn-decrement:hover { background: #dc2626; transform: translateY(-2px); }
+
+.btn-increment { background: #22c55e; }
+.btn-increment:hover { background: #16a34a; transform: translateY(-2px); }
+
+.btn-reset { background: #64748b; }
+.btn-reset:hover { background: #475569; transform: translateY(-2px); }
+
+.btn:active { transform: translateY(0); }
+
+/* --- Dynamic State Themes --- */
+
+/* Positive State (Green) */
+.state-positive .counter-circle {
+    border-color: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+.state-positive .wave-svg { fill: rgba(34, 197, 94, 0.25); }
+.state-positive #status-text { color: #22c55e; }
+
+/* Negative State (Red) */
+.state-negative .counter-circle {
+    border-color: #ef4444;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+.state-negative .wave-svg { fill: rgba(239, 68, 68, 0.25); }
+.state-negative #status-text { color: #ef4444; }

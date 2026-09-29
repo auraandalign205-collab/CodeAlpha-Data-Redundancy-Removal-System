@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dynamic Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="counter-container">
+        <!-- Top Text Indicator -->
+        <div class="status-indicator" id="status-text">Neutral Point</div>
+
+        <!-- Main Display Area with Moving Wave -->
+        <div class="display-area">
+            <!-- SVG Moving Wave Line -->
+            <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path id="moving-wave" d="M0,160 C320,300 420,20 720,160 C1020,300 1120,20 1440,160 L1440,320 L0,320 Z"></path>
+            </svg>
+            
+            <!-- Central Counter Circle -->
+            <div class="counter-circle" id="counter-circle">
+                <span id="counter-value">0</span>
+            </div>
+        </div>
+
+        <!-- Statistics Dashboard -->
+        <div class="stats-dashboard">
+            <div class="stat-box">
+                <span class="stat-label">Highest</span>
+                <span class="stat-number" id="highest-val">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Lowest</span>
+                <span class="stat-number" id="lowest-val">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Total Steps</span>
+                <span class="stat-number" id="total-steps">0</span>
+            </div>
+        </div>
+
+        <!-- Action Control Buttons -->
+        <div class="controls-area">
+            <button class="btn btn-decrement" id="btn-decrement">- Decrement</button>
+            <button class="btn btn-reset" id="btn-reset">Reset</button>
+            <button class="btn btn-increment" id="btn-increment">+ Increment</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
