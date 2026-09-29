@@ -1,6 +1,6 @@
-# 🌊 Dynamic Wave Counter
+# 🌊CodeAlpha-Data-Redundancy-Removal-System
 
-A premium, interactive, and beautifully designed **Dynamic Wave Counter** web application. This project features state-driven UI themes, interactive dashboard statistics, and smooth animated SVG wave effects that adapt in real time as the counter values change.
+A premium, interactive, and beautifully designed **CodeAlpha-Data-Redundancy-Removal-Systemr** web application. This project features state-driven UI themes, interactive dashboard statistics, and smooth animated SVG wave effects that adapt in real time as the counter values change.
 
 ## ✨ Features
 
